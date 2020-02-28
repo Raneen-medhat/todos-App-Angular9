@@ -1,0 +1,13 @@
+#todo {
+    .card-bg {
+        background-color: #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .controls {
+        button {
+            margin: 0 5px;
+        }
+    }
+}
