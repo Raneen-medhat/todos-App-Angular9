@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
 @Component({
   selector: 'app-todo-card',
   templateUrl: './todo-card.component.html',
@@ -8,20 +7,25 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TodoCardComponent implements OnInit {
   @Input()  todo;
   @Output() delete = new EventEmitter();
-
-  constructor() { }
+  @Output() edit = new EventEmitter();
+  @Output() confirmEdit = new EventEmitter();
+  isOpneModal = false;
+  constructor() {}
 
   deleteTodo = (id) => {
-    console.log(id)
-    this.delete.emit(id)
+    this.delete.emit(id);
   }
 
-  openEditModal = (todo) => {
+  openEditModal = (todo)=> {
+    this.isOpneModal = !this.isOpneModal;
+    this.edit.emit(todo);
+  }
 
+  saveEdit = (editedValue) => {
+    this.confirmEdit.emit(editedValue);
   }
 
   ngOnInit(): void {
-    console.log(this.todo);
   }
 
 }

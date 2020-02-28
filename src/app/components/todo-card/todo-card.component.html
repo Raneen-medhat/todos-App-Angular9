@@ -7,3 +7,5 @@
         </div>
     </div>
 </section>
+
+<app-modal *ngIf='isOpneModal'[todo]='todo' (save)='saveEdit($event)'></app-modal>
