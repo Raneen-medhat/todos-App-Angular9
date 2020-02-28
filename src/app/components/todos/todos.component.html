@@ -1,0 +1,27 @@
+<section id="todos">
+    <h1 class="mb-2">Todos</h1>
+    <div class="input-group mb-3">
+        <div class="input-group mb-3">
+            <input #task type="text" class="form-control p-4" placeholder="Add task" aria-label="Add task"
+                aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary w-100" 
+                        type="button" 
+                        id="button-addon2"
+                        (click)="addTodo(task)"
+                        >Add
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="todos-cards" *ngFor='let todo of todos'>
+        <app-todo-card 
+        [todo]='todo'
+        (delete)='deleteTodo($event)'
+        (edit)='editTodo($event)'
+        (confirmEdit)='confirmEdit($event)'
+        >
+        </app-todo-card>
+    </div>
+</section>
