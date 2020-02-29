@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo = (todo) => {
-    this.todos.push({ value: todo.value,id: this.todos.length});
+    this.todos.push({ value: todo,id: this.todos.length});
   }
 
   deleteTodo = (id) => {
