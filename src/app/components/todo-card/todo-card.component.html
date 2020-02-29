@@ -2,8 +2,8 @@
     <div class="card-bg p-3 text-white">
         <p class="p-0 m-0">{{todo.value}}</p>
         <div class="controls">
-            <button class="btn bg-warning" (click)='openEditModal(todo)'>Edit</button>
-            <button class="btn bg-danger"  (click)='deleteTodo(todo.id)'>Delete</button>
+            <button class="btn bg-warning" id="edit" (click)='openEditModal(todo)'>Edit</button>
+            <button class="btn bg-danger" id="delete" (click)='deleteTodo(todo.id)'>Delete</button>
         </div>
     </div>
 </section>
